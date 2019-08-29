@@ -2,7 +2,7 @@
 
 This repository was made using the [practicalAI boilerplate](https://github.com/practicalAI/boilerplate) template. Checkout this simple [text-classification](https://github.com/practicalAI/text-classification) repository for an example of how this boilerplate template can be leveraged.
 
-## Setup
+### Setup
 ```
 cd src
 virtualenv -p python3.6 venv
@@ -16,9 +16,16 @@ gunicorn --log-level ERROR --workers 1 --timeout 90 --graceful-timeout 30 --bind
 2. Edit the *training.json* configuration file in **src/configs**.
 3. Define *requirements* and *setup.py* for your package in **src**.
 4. Edit *application.py*, *config.py*, and *wsgi.py* in **src**.
-5. Edit *endpoints.py* and *utils.py* functions in **src/api**.
+5. Edit *endpoints.py*, *operations.py* and *utils.py* functions in **src/api**.
 6. Add ML components in **src/{{ cookiecutter.service_name }}**.
 7. Add unit and e2e tests in **src/tests**.
+
+### API endpoints
+- Health check `GET /{{ cookiecutter.service_name }}`
+```bash
+curl --request GET \
+     --url http://localhost:5000/{{ cookiecutter.service_name }}/health
+```
 
 ### Directory structure
 ```
@@ -26,24 +33,30 @@ gunicorn --log-level ERROR --workers 1 --timeout 90 --graceful-timeout 30 --bind
 ├── src/                                  - source files
 |   ├── api/                                - holds all API scripts
 |   |   ├── endpoints.py                      - API endpoint definitions
-|   |   └── utils.py                          - utility functions for endpoints
+|   |   ├── operations.py                     - endpoint operation
+|   |   └── utils.py                          - api utility functions
 |   ├── configs/                            - configuration files
 |   |   ├── logging.json                      - logger configuration
-|   |   └── training.json                     - training configuration
-|   ├── data/                               - directory to hold datasets
-|   ├── {{ cookiecutter.package_name }}/    - ML files
-|   |   ├── dataset.py                        - dataset generation
-|   |   ├── eval.py                           - evaluation on test set
-|   |   ├── infer.py                          - inference operations
-|   |   ├── load.py                           - load data
-|   |   ├── model.py                          - model functions
-|   |   ├── split.py                          - split data
-|   |   ├── tokenize.py                       - tokenize data
-|   |   ├── train.py                          - training operations
-|   |   ├── utils.py                          - utilities
+|   |   ├── training.json                     - training configuration
+|   ├── data/                               - directory of datasets
+|   ├── experiments/                        - directory of experiments
+|   ├── logs/                               - directory of log files
+|   |   ├── errors/                           - error log
+|   |   ├── info/                             - info log
+|   ├── tensorboard/                        - TensorBoard events
 |   ├── tests/                              - tests
 |   |   ├── e2e/                              - integration tests
 |   |   ├── unit/                             - unit tests
+|   ├── {{ cookiecutter.package_name }}/    - ML files
+|   |   ├── dataset.py                        - dataset generator functions
+|   |   ├── eval.py                           - evaluation operations
+|   |   ├── load.py                           - load data
+|   |   ├── model.py                          - model functions
+|   |   ├── predict.py                        - inference operations
+|   |   ├── split.py                          - split data
+|   |   ├── train.py                          - training operations
+|   |   ├── utilities.py                      - utilities
+|   |   ├── vectorize.py                      - vectorize data
 |   ├── application.py                      - application script
 |   ├── config.py                           - application configuration
 |   ├── requirements.txt                    - python package requirements

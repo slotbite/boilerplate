@@ -23,24 +23,30 @@ cookiecutter gh:practicalAI/boilerplate
 ├── src/                                  - source files
 |   ├── api/                                - holds all API scripts
 |   |   ├── endpoints.py                      - API endpoint definitions
-|   |   └── utils.py                          - utility functions for endpoints
+|   |   ├── operations.py                     - endpoint operation
+|   |   └── utils.py                          - api utility functions
 |   ├── configs/                            - configuration files
 |   |   ├── logging.json                      - logger configuration
-|   |   └── training.json                     - training configuration
-|   ├── data/                               - directory to hold datasets
-|   ├── {{ cookiecutter.package_name }}/    - ML files
-|   |   ├── dataset.py                        - dataset generator functions
-|   |   ├── eval.py                           - evaluation on test set
-|   |   ├── infer.py                          - inference operations
-|   |   ├── load.py                           - load data
-|   |   ├── model.py                          - model functions
-|   |   ├── split.py                          - split data
-|   |   ├── tokenize.py                       - tokenize data
-|   |   ├── train.py                          - training operations
-|   |   ├── utils.py                          - utilities
+|   |   ├── training.json                     - training configuration
+|   ├── data/                               - directory of datasets
+|   ├── experiments/                        - directory of experiments
+|   ├── logs/                               - directory of log files
+|   |   ├── errors/                           - error log
+|   |   ├── info/                             - info log
+|   ├── tensorboard/                        - TensorBoard events
 |   ├── tests/                              - tests
 |   |   ├── e2e/                              - integration tests
 |   |   ├── unit/                             - unit tests
+|   ├── {{ cookiecutter.package_name }}/    - ML files
+|   |   ├── dataset.py                        - dataset generator functions
+|   |   ├── eval.py                           - evaluation operations
+|   |   ├── load.py                           - load data
+|   |   ├── model.py                          - model functions
+|   |   ├── predict.py                        - inference operations
+|   |   ├── split.py                          - split data
+|   |   ├── train.py                          - training operations
+|   |   ├── utilities.py                      - utilities
+|   |   ├── vectorize.py                      - vectorize data
 |   ├── application.py                      - application script
 |   ├── config.py                           - application configuration
 |   ├── requirements.txt                    - python package requirements
