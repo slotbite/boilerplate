@@ -1,8 +1,9 @@
 {
   "author_name": "Goku Mohandas",
-  "author_email": "learnpracticalai@gmail.com",
+  "author_email": "contact@practical.ai",
   "github_username": "GokuMohandas",
   "project_name": "PROJECT",
+  "project_url": "",
   "service_name": "{{ cookiecutter.project_name.lower().replace('_','-').replace(' ', '-') }}",
   "package_name": "{{ cookiecutter.project_name.lower().replace('-','_').replace(' ', '_') }}"
 }

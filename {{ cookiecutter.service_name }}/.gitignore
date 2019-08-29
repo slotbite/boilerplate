@@ -5,12 +5,14 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.vscode/
 
 # Data
-experiments/
+data/
+media/
 logs/
 tensorboard/
-*.log
+experiments/
 
 # C extensions
 *.so
@@ -60,7 +62,6 @@ nosetests.xml
 coverage.xml
 *,cover
 .hypothesis/
-.pytest_cache
 
 # Translations
 *.mo

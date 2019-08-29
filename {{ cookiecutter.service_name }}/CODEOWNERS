@@ -3,7 +3,7 @@
 * @{{ cookiecutter.github_username }}
 
 configs/                        @{{ cookiecutter.github_username }}
-datasets/                       @{{ cookiecutter.github_username }}
+data/                       @{{ cookiecutter.github_username }}
 {{ cookiecutter.package_name }}/  @{{ cookiecutter.github_username }}
 .dockerignore                   @{{ cookiecutter.github_username }}
 .gitignore                      @{{ cookiecutter.github_username }}

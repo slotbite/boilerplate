@@ -5,15 +5,14 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.vscode/
 
 # Data
-#datasets/
-
-# Models
-experiments/
-
-# Logs
+data/
+media/
 logs/
+tensorboard/
+experiments/
 
 # C extensions
 *.so

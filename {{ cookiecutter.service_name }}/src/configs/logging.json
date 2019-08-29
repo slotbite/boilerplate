@@ -6,7 +6,6 @@
             "format": "\n%(asctime)s:%(levelname)s:%(filename)s:%(funcName)s:%(lineno)d:\n%(message)s"
         }
     },
-
     "handlers": {
         "console": {
             "class": "logging.StreamHandler",
@@ -14,32 +13,33 @@
             "formatter": "basic",
             "stream": "ext://sys.stdout"
         },
-
         "info_file_handler": {
             "class": "logging.handlers.RotatingFileHandler",
             "level": "INFO",
             "formatter": "basic",
-            "filename": "logs/info.log",
+            "filename": "../logs/info.log",
             "maxBytes": 10485760,
             "backupCount": 10,
             "encoding": "utf8"
         },
-
         "error_file_handler": {
             "class": "logging.handlers.RotatingFileHandler",
             "level": "ERROR",
             "formatter": "basic",
-            "filename": "logs/errors.log",
+            "filename": "../logs/errors.log",
             "maxBytes": 10485760,
             "backupCount": 10,
             "encoding": "utf8"
         }
     },
-
     "loggers": {
-        "ml_logger": {
+        "logger": {
             "level": "DEBUG",
-            "handlers": ["console", "info_file_handler", "error_file_handler"],
+            "handlers": [
+                "console",
+                "info_file_handler",
+                "error_file_handler"
+            ],
             "propagate": false
         }
     }
